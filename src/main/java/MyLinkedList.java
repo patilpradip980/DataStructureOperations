@@ -66,9 +66,28 @@ public class MyLinkedList<K> {
         newNode.setNext(tempNode);
     }
 
+    public void deleteInMiddle(MyNode<Integer> key) {
+        INode tempNode = this.head;
+        while (!tempNode.getNext().equals(key)) {
+            tempNode = tempNode.getNext();
+        }
+        tempNode.setNext(tempNode.getNext().getNext());
+        System.out.println("size of linklist:" + size());
+    }
+
+    public int size() {
+        INode tempNode = this.head;
+        int size = 0;
+        while (tempNode != null) {
+            size++;
+            tempNode = tempNode.getNext();
+        }
+        return size;
+    }
+
 
     public void printMyNodes() {
-        StringBuffer myNodes = new StringBuffer("MY Nodes:-> ");
+        StringBuffer myNodes = new StringBuffer(" Nodes:-> ");
         INode tempNode = head;
         while (tempNode.getNext() != null) {
             myNodes.append(tempNode.getKey());
