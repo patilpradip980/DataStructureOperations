@@ -49,19 +49,21 @@ public class MyLinkedList<K> {
         return tempNode;
     }
 
-    public INode search(K key) {
-        INode tempNode = this.head;
-        while (tempNode != null && tempNode.getNext() != null) {
-            if (tempNode.getNext().equals(key)) {
-                tempNode = tempNode.getNext();
+    public  INode search(K key ) {
+        INode tempNode=this.head;
+        while (tempNode!=null){
+            if(tempNode.equals(key)){
                 return tempNode;
             }
+            tempNode=tempNode.getNext();
         }
         return null;
     }
-
+    public void insertMiddle(K key,INode newNode){
+        insert(search(key),newNode);
+    }
     public void insert(INode myNode, INode newNode) {
-        INode tempNode = myNode.getNext();
+        INode tempNode=myNode.getNext();
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
     }

@@ -98,29 +98,30 @@ public class LInkedListTestCases {
         MyNode<Integer> myFirstNode = new MyNode<>(70);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(56);
-        MyLinkedList myLinkedList = new MyLinkedList();
+        MyLinkedList<MyNode<Integer>> myLinkedList = new MyLinkedList<>();
         myLinkedList.append(myFirstNode);
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
         myLinkedList.printMyNodes();
-        INode<Integer> searchNode = myLinkedList.search(mySecondNode);
+        INode searchNode = myLinkedList.search(mySecondNode);
         Assert.assertEquals(mySecondNode, searchNode);
     }
 
     @Test
-    public void providedLinkedList_WhenInsertProvidedNode_ShouldReturnTrue(){
-        MyNode<Integer> myFirstNode =new MyNode<>(70);
-        MyNode<Integer> mySecondNode =new MyNode<>(30);
-        MyNode<Integer> myThirdNode =new MyNode<>(56);
-        MyNode<Integer> newNode =new MyNode<>(40);
-        MyLinkedList myLinkedList=new MyLinkedList();
+    public void givenLinkedList_WhenInsertProvidedNode_ShouldReturnTrue() {
+        MyNode<Integer> myFirstNode = new MyNode<>(70);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(56);
+        MyNode<Integer> newNode = new MyNode<>(40);
+        MyLinkedList<MyNode<Integer>> myLinkedList = new MyLinkedList<>();
         myLinkedList.add(myFirstNode);
         myLinkedList.add(mySecondNode);
         myLinkedList.add(myThirdNode);
-        myLinkedList.insert(mySecondNode,newNode);
+        myLinkedList.insertMiddle(mySecondNode, newNode);
         myLinkedList.printMyNodes();
-        boolean result=myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode) &&
-                myLinkedList.tail.equals(myFirstNode) && mySecondNode.getNext().equals(newNode) ;
+        boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode) &&
+                myLinkedList.tail.equals(myFirstNode) && mySecondNode.getNext().equals(newNode);
         Assert.assertTrue(result);
     }
+
 }
