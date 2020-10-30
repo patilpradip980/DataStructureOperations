@@ -15,4 +15,19 @@ public class QueueTestCases {
         INode peak = myQueue.peak();
         Assert.assertEquals(myFirstNode, peak);
     }
+
+    @Test
+    public void given3Numbers_WhenDequeue_ShouldPassResult() {
+        MyQueue<Integer> myQueue = new MyQueue<>();
+        MyNode<Integer> myFirstNode = new MyNode<>(70);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(56);
+        myQueue.enqueue(myFirstNode);
+        myQueue.enqueue(mySecondNode);
+        myQueue.enqueue(myThirdNode);
+        myQueue.printStack();
+        INode dequeueNode = myQueue.dequeue();
+        myQueue.printStack();
+        Assert.assertEquals(myFirstNode, dequeueNode);
+    }
 }

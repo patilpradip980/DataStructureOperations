@@ -25,4 +25,8 @@ public class MyQueue<T> {
         }
         return null;
     }
+
+    public INode dequeue() {
+        return myLinkedList.pop();
+    }
 }

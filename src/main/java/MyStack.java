@@ -25,12 +25,12 @@ public class MyStack<T> {
     }
 
     public INode pop() {
-        INode<Integer> peak = (INode<Integer>) peak();
+      /*  INode<Integer> peak = (INode<Integer>) peak();
         while (peak != null) {
-            myLinkedList.pop();
+            myLinkedList.popLast();
             peak = (INode<Integer>) peak();
-        }
-        return myLinkedList.head;
+        }*/
+        return myLinkedList.pop();
     }
 
 
