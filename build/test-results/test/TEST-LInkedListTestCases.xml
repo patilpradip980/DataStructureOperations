@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LInkedListTestCases" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-30T12:57:47" hostname="PUNITP357093L" time="0.007">
+<testsuite name="LInkedListTestCases" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-30T13:03:27" hostname="PUNITP357093L" time="0.012">
   <properties/>
-  <testcase name="given3Numbers_When56AddedToLinkedList_ShouldBeAddAtTop" classname="LInkedListTestCases" time="0.007"/>
+  <testcase name="given3NumberInsertSecond_shouldPassResult" classname="LInkedListTestCases" time="0.012"/>
   <system-out><![CDATA[MY Nodes:-> 56->30->70
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
