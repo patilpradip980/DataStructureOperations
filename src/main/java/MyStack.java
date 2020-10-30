@@ -1,6 +1,6 @@
 public class MyStack<T> {
 
-    public final MyLinkedList<T> myLinkedList;
+    public final MyLinkedList myLinkedList;
 
     public MyStack() {
         myLinkedList = new MyLinkedList();
@@ -14,7 +14,7 @@ public class MyStack<T> {
         return myLinkedList.head == null;
     }
 
-    public INode<T> peak() {
+    public INode peak() {
         if (!isEmpty()) {
             return myLinkedList.head;
         } else {
@@ -24,7 +24,7 @@ public class MyStack<T> {
         return null;
     }
 
-    public INode<T> pop() {
+    public INode pop() {
         INode<Integer> peak = (INode<Integer>) peak();
         while (peak != null) {
             myLinkedList.pop();
