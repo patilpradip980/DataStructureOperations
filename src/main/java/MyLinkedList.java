@@ -1,4 +1,4 @@
-public class MyLinkedList {
+public class MyLinkedList<K> {
     public INode tail;
     public INode head;
 
@@ -53,6 +53,17 @@ public class MyLinkedList {
         this.tail = tempNode;
         tempNode = tempNode.getNext();
         return tempNode;
+    }
+
+    public INode search(K key) {
+        INode tempNode = this.head;
+        while (tempNode != null) {
+            if (tempNode.equals(key)) {
+                return tempNode;
+            }
+            tempNode = tempNode.getNext();
+        }
+        return null;
     }
 
     public void printMyNodes() {
