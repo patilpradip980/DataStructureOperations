@@ -18,6 +18,7 @@ public class MyLinkedList<K> {
             this.head = newNode;
             this.head.setNext(tempNode);
         }
+
     }
 
     public void append(INode myNode) {
@@ -49,21 +50,23 @@ public class MyLinkedList<K> {
         return tempNode;
     }
 
-    public  INode search(K key ) {
-        INode tempNode=this.head;
-        while (tempNode!=null){
-            if(tempNode.equals(key)){
+    public INode search(K key) {
+        INode tempNode = this.head;
+        while (tempNode != null) {
+            if (tempNode.equals(key)) {
                 return tempNode;
             }
-            tempNode=tempNode.getNext();
+            tempNode = tempNode.getNext();
         }
         return null;
     }
-    public void insertMiddle(K key,INode newNode){
-        insert(search(key),newNode);
+
+    public void insertMiddle(K key, INode newNode) {
+        insert(search(key), newNode);
     }
+
     public void insert(INode myNode, INode newNode) {
-        INode tempNode=myNode.getNext();
+        INode tempNode = myNode.getNext();
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
     }
@@ -98,6 +101,7 @@ public class MyLinkedList<K> {
         }
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
+
     }
 
 }
