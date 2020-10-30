@@ -106,4 +106,21 @@ public class LInkedListTestCases {
         INode<Integer> searchNode = myLinkedList.search(mySecondNode);
         Assert.assertEquals(mySecondNode, searchNode);
     }
+
+    @Test
+    public void providedLinkedList_WhenInsertProvidedNode_ShouldReturnTrue(){
+        MyNode<Integer> myFirstNode =new MyNode<>(70);
+        MyNode<Integer> mySecondNode =new MyNode<>(30);
+        MyNode<Integer> myThirdNode =new MyNode<>(56);
+        MyNode<Integer> newNode =new MyNode<>(40);
+        MyLinkedList myLinkedList=new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.add(mySecondNode);
+        myLinkedList.add(myThirdNode);
+        myLinkedList.insert(mySecondNode,newNode);
+        myLinkedList.printMyNodes();
+        boolean result=myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode) &&
+                myLinkedList.tail.equals(myFirstNode) && mySecondNode.getNext().equals(newNode) ;
+        Assert.assertTrue(result);
+    }
 }
