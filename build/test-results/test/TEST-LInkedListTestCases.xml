@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="LInkedListTestCases" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-30T14:58:29" hostname="PUNITP357093L" time="0.01">
   <properties/>
   <testcase name="given3Number_searchForValue_shouldPassResult" classname="LInkedListTestCases" time="0.01"/>
   <system-out><![CDATA[MY Nodes:-> 70->30->56
+=======
+<testsuite name="LInkedListTestCases" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-30T15:13:53" hostname="PUNITP357093L" time="0.021">
+  <properties/>
+  <testcase name="given4Numbers_WhenDeletingMiddle_shouldPassResult" classname="LInkedListTestCases" time="0.021"/>
+  <system-out><![CDATA[size of linklist:3
+MY Nodes:-> 56->30->70
+>>>>>>> uc8
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

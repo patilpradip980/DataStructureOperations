@@ -108,20 +108,39 @@ public class LInkedListTestCases {
     }
 
     @Test
-    public void givenLinkedList_WhenInsertProvidedNode_ShouldReturnTrue() {
+    public void providedLinkedList_WhenInsertProvidedNode_ShouldReturnTrue() {
         MyNode<Integer> myFirstNode = new MyNode<>(70);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(56);
         MyNode<Integer> newNode = new MyNode<>(40);
-        MyLinkedList<MyNode<Integer>> myLinkedList = new MyLinkedList<>();
+        MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.add(myFirstNode);
         myLinkedList.add(mySecondNode);
         myLinkedList.add(myThirdNode);
-        myLinkedList.insertMiddle(mySecondNode, newNode);
+        myLinkedList.insert(mySecondNode, newNode);
         myLinkedList.printMyNodes();
         boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode) &&
                 myLinkedList.tail.equals(myFirstNode) && mySecondNode.getNext().equals(newNode);
         Assert.assertTrue(result);
     }
 
+    @Test
+    public void given4Numbers_WhenDeletingMiddle_shouldPassResult() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(40);
+        MyNode<Integer> myFourthNode = new MyNode<>(70);
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.append(myFourthNode);
+        myLinkedList.deleteInMiddle(myThirdNode);
+        myLinkedList.printMyNodes();
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode);
+        myLinkedList.tail.equals(myFourthNode);
+        Assert.assertTrue(result);
+
+    }
 }
