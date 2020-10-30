@@ -47,7 +47,7 @@ public class LInkedListTestCases {
     }
 
     @Test
-    public void given3NumberInsertSecond_shouldPassResult() {
+    public void given3Numbers_When30AddedToLinkedList_ShouldBeAddBetween() {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
