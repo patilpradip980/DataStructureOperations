@@ -15,7 +15,7 @@ public class LInkedListTestCases {
     }
 
     @Test
-    public void given3Numbers_When70AddedToLinkedList_ShouldBeAddAtTop() {
+    public void given3Numbers_When70AddedFirstToLinkedList_ShouldPassResult() {
         MyNode<Integer> myFirstNode = new MyNode<>(70);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(56);
@@ -31,7 +31,7 @@ public class LInkedListTestCases {
     }
 
     @Test
-    public void given3Numbers_When56AddedToLinkedList_ShouldBeAddAtTop() {
+    public void given3Numbers_When56AddedFirstToLinkedList_ShouldPassResult() {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
@@ -47,7 +47,7 @@ public class LInkedListTestCases {
     }
 
     @Test
-    public void given3Numbers_When30AddedToLinkedList_ShouldBeAddBetween() {
+    public void given3Numbers_When30AddedBetweenToLinkedList_ShouldPassResult() {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
@@ -64,4 +64,18 @@ public class LInkedListTestCases {
 
     }
 
+    @Test
+    public void given3Numbers_WhenDeleteFirst_ShouldPassResult() {
+        MyNode<Integer> myFirstNode = new MyNode<>(70);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(56);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.add(mySecondNode);
+        myLinkedList.add(myThirdNode);
+        myLinkedList.pop();
+        myLinkedList.printMyNodes();
+        boolean result = myLinkedList.head.equals(mySecondNode);
+        Assert.assertTrue(result);
+    }
 }
