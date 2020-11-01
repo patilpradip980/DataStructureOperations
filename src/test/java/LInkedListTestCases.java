@@ -103,7 +103,7 @@ public class LInkedListTestCases {
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
         myLinkedList.printMyNodes();
-        INode searchNode = myLinkedList.search(mySecondNode);
+        Integer searchNode = myLinkedList.search(mySecondNode);
         Assert.assertEquals(mySecondNode, searchNode);
     }
 
@@ -131,7 +131,7 @@ public class LInkedListTestCases {
         MyNode<Integer> myThirdNode = new MyNode<>(40);
         MyNode<Integer> myFourthNode = new MyNode<>(70);
         MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
-        myLinkedList.add(myFirstNode);
+        myLinkedList.sortList(myFirstNode);
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
         myLinkedList.append(myFourthNode);
@@ -139,7 +139,7 @@ public class LInkedListTestCases {
         myLinkedList.printMyNodes();
         boolean result = myLinkedList.head.equals(myFirstNode) &&
                 myLinkedList.head.getNext().equals(mySecondNode);
-        myLinkedList.tail.equals(myFourthNode);
+        myFourthNode.equals(myLinkedList.tail);
         Assert.assertTrue(result);
 
     }

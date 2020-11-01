@@ -22,7 +22,10 @@ public class MyNode<K> implements INode<K> {
         return next;
     }
 
-    public void setNext(INode next) {
+    @Override
+    public void setNext(Integer next) {
         this.next = (MyNode<K>) next;
+
     }
+
 }

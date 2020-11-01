@@ -12,7 +12,7 @@ public class QueueTestCases {
         myQueue.enqueue(mySecondNode);
         myQueue.enqueue(myThirdNode);
         myQueue.printStack();
-        INode peak = myQueue.peak();
+        Integer peak = myQueue.peak();
         Assert.assertEquals(myFirstNode, peak);
     }
 
@@ -26,7 +26,7 @@ public class QueueTestCases {
         myQueue.enqueue(mySecondNode);
         myQueue.enqueue(myThirdNode);
         myQueue.printStack();
-        INode dequeueNode = myQueue.dequeue();
+        Integer dequeueNode = myQueue.dequeue();
         myQueue.printStack();
         Assert.assertEquals(myFirstNode, dequeueNode);
     }

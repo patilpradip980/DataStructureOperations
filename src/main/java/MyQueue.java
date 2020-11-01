@@ -16,7 +16,7 @@ public class MyQueue<T> {
         return myLinkedList.head == null;
     }
 
-    public INode peak() {
+    public Integer peak() {
         if (!isEmpty()) {
             return myLinkedList.head;
         } else {
@@ -26,7 +26,7 @@ public class MyQueue<T> {
         return null;
     }
 
-    public INode dequeue() {
+    public Integer dequeue() {
         return myLinkedList.pop();
     }
 }

@@ -6,7 +6,7 @@ public class MyStack<T> {
         myLinkedList = new MyLinkedList();
     }
 
-    public void push(INode<T> element) {
+    public void push(Integer<T> element) {
         myLinkedList.add(element);
     }
 
@@ -14,7 +14,7 @@ public class MyStack<T> {
         return myLinkedList.head == null;
     }
 
-    public INode peak() {
+    public Integer peak() {
         if (!isEmpty()) {
             return myLinkedList.head;
         } else {
@@ -24,7 +24,7 @@ public class MyStack<T> {
         return null;
     }
 
-    public INode pop() {
+    public Integer pop() {
       /*  INode<Integer> peak = (INode<Integer>) peak();
         while (peak != null) {
             myLinkedList.popLast();
