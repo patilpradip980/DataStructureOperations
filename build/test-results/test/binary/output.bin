@@ -1,2 +1,1 @@
- Nodes:-> 70->30->56
- Nodes:-> 30->56
+{MyHashMapNodes{MyLinkedListNodes{MyMapNode{K=toV =2}-->MyMapNode{K=beV =2}-->MyMapNode{K=orV =1}-->MyMapNode{K=notV =1}}}

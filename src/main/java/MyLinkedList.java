@@ -1,3 +1,5 @@
+
+
 public class MyLinkedList<K> {
     public INode tail;
     public INode head;
@@ -53,7 +55,7 @@ public class MyLinkedList<K> {
     public INode search(K key) {
         INode tempNode = this.head;
         while (tempNode != null) {
-            if (tempNode.equals(key)) {
+            if (tempNode.getKey().equals(key) || tempNode.equals(key)) {
                 return tempNode;
             }
             tempNode = tempNode.getNext();
@@ -61,8 +63,25 @@ public class MyLinkedList<K> {
         return null;
     }
 
-    public void insertMiddle(K key, INode newNode) {
-        insert(search(key), newNode);
+
+
+    public void addInAscendingOrder(INode<K> newNode) {
+        if (this.head == null) {
+            this.head = newNode;
+        } else if (((Comparable<K>) this.head.getKey()).compareTo(newNode.getKey()) > 0) {
+            newNode.setNext(head);
+            this.head = newNode;
+        } else {
+            INode<K> tempNode = this.head;
+            while (tempNode.getNext() != null &&
+                    ((Comparable<K>) tempNode.getNext().getKey()).compareTo(newNode.getKey()) < 0) {
+                tempNode = tempNode.getNext();
+            }
+            newNode.setNext(tempNode.getNext());
+            tempNode.setNext(newNode);
+        }
+        System.out.println("Ascending order : ");
+        printMyNodes();
     }
 
     public void insert(INode myNode, INode newNode) {
@@ -104,4 +123,13 @@ public class MyLinkedList<K> {
 
     }
 
+    public void printMyNode() {
+        System.out.println("my Nodes : " + head);
+    }
+
+    @Override
+    public String toString() {
+        return "MyLinkedListNodes{" + head +
+                '}';
+    }
 }

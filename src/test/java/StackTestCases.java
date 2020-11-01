@@ -26,9 +26,11 @@ public class StackTestCases {
         myStack.push(mySecondNode);
         myStack.push(myThirdNode);
         myStack.printStack();
-        INode popNode = myStack.pop();
+        myStack.pop();
         myStack.printStack();
-        Assert.assertEquals(myThirdNode,popNode);
+        INode popNode1 = myStack.pop();
+        myStack.printStack();
+        Assert.assertEquals(mySecondNode,popNode1);
     }
 
 }
